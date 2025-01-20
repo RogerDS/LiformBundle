@@ -21,12 +21,12 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 class TransformerCompilerPass implements CompilerPassInterface
 {
-    const TRANSFORMER_TAG = 'liform.transformer';
+    public const TRANSFORMER_TAG = 'liform.transformer';
 
     /**
      * @inheritdoc
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (!$container->hasDefinition('Limenius\Liform\Resolver')) {
             return;

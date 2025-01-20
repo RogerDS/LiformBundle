@@ -20,12 +20,12 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class ExtensionCompilerPass implements CompilerPassInterface
 {
-    const EXTENSION_TAG = 'liform.extension';
+    public const EXTENSION_TAG = 'liform.extension';
 
     /**
      * @inheritdoc
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (!$container->hasDefinition('Limenius\Liform\Liform')) {
             return;
